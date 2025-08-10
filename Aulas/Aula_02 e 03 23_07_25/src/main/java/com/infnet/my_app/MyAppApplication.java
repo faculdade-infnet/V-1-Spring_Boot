@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
+@RestController // <-- Esta anotação é necessária
 public class MyAppApplication {
     public static void main(String[] args) {
         SpringApplication.run(MyAppApplication.class, args);

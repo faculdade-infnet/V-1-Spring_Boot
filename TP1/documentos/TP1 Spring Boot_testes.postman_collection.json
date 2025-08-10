@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "6bd23e81-810c-47df-b515-656e1224f38e",
+		"name": "TP1 Spring Boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44799482",
+		"_collection_link": "https://samuel-7792210.postman.co/workspace/samuel's-Workspace~a0a601d6-0edf-41c2-8f38-a282d263ca19/collection/44799482-6bd23e81-810c-47df-b515-656e1224f38e?action=share&source=collection_link&creator=44799482"
+	},
+	"item": [
+		{
+			"name": "Adicao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/adicao?number1=20&number2=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"adicao"
+					],
+					"query": [
+						{
+							"key": "number1",
+							"value": "20"
+						},
+						{
+							"key": "number2",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"number1\": 20,\r\n  \"number2\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/adicao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"adicao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subtracao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/subtracao?number1=20&number2=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subtracao"
+					],
+					"query": [
+						{
+							"key": "number1",
+							"value": "20"
+						},
+						{
+							"key": "number2",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subtracao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"number1\": 20,\r\n  \"number2\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subtracao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subtracao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multiplicacao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/multiplicacao?number1=20&number2=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"multiplicacao"
+					],
+					"query": [
+						{
+							"key": "number1",
+							"value": "20"
+						},
+						{
+							"key": "number2",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multiplicacao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"number1\": 20,\r\n  \"number2\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/multiplicacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"multiplicacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Divisao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/divisao?number1=20&number2=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"divisao"
+					],
+					"query": [
+						{
+							"key": "number1",
+							"value": "20"
+						},
+						{
+							"key": "number2",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Divisao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"number1\": 20,\r\n  \"number2\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/divisao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"divisao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exponenciacao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/exponenciacao?number1=3&number2=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exponenciacao"
+					],
+					"query": [
+						{
+							"key": "number1",
+							"value": "3"
+						},
+						{
+							"key": "number2",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exponenciacao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"number1\": 3,\r\n  \"number2\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/exponenciacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exponenciacao"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
