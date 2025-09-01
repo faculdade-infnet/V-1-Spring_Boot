@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "e759f3d6-8d85-43d7-b23e-e3b1868e7e02",
+		"name": "SpringBoot V-I Aula07 application-exception",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44799482",
+		"_collection_link": "https://samuel-7792210.postman.co/workspace/samuel's-Workspace~a0a601d6-0edf-41c2-8f38-a282d263ca19/collection/44799482-e759f3d6-8d85-43d7-b23e-e3b1868e7e02?action=share&source=collection_link&creator=44799482"
+	},
+	"item": [
+		{
+			"name": "Get Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/financeiro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"financeiro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post data",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"valor\": 100.00,\r\n    \"lancamento\": \"Pagemento de teste\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/financeiro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"financeiro"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
