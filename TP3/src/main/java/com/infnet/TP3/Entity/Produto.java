@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
