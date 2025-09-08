@@ -1,0 +1,28 @@
+// Produtos
+[
+  {
+    "nome": "Notebook X1",
+    "descricao": "Notebook com 16GB RAM e SSD 512GB",
+    "preco": 4200.00
+  },
+  {
+    "nome": "Mouse Gamer",
+    "descricao": "Mouse óptico 7200 DPI",
+    "preco": 150.00
+  },
+  {
+    "nome": "Teclado Mecânico",
+    "descricao": "Teclado RGB switches azuis",
+    "preco": 300.00
+  },
+  {
+    "nome": "Monitor 27\"",
+    "descricao": "Monitor LED Full HD",
+    "preco": 1200.00
+  },
+  {
+    "nome": "Cadeira Gamer",
+    "descricao": "Cadeira ergonômica com ajuste lombar",
+    "preco": 900.00
+  }
+]

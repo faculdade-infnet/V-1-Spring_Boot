@@ -1,0 +1,28 @@
+// Funcionários
+[
+  {
+    "nome": "Marcos Paulo",
+    "cargo": "Analista de Sistemas",
+    "salario": 4500.00
+  },
+  {
+    "nome": "Fernanda Costa",
+    "cargo": "Gerente de Projetos",
+    "salario": 7500.00
+  },
+  {
+    "nome": "Ricardo Gomes",
+    "cargo": "Desenvolvedor Backend",
+    "salario": 5000.00
+  },
+  {
+    "nome": "Patrícia Alves",
+    "cargo": "Desenvolvedora Frontend",
+    "salario": 4800.00
+  },
+  {
+    "nome": "Thiago Ferreira",
+    "cargo": "DevOps Engineer",
+    "salario": 6000.00
+  }
+]

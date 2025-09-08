@@ -38,7 +38,7 @@ public class AlunoService {
     public Aluno update(Aluno obj) {
         Optional<Aluno> newObj = repository.findById(obj.getId());
         UpdateAluno(newObj, obj);
-        return repository.save(newObj.get());
+        return repository.save(newObj   .get());
     }
 
     private void UpdateAluno(Optional<Aluno> newObj, Aluno obj) {
