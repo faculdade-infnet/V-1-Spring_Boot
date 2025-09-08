@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/fornecedores")
+@RequestMapping("/funcionarios")
 public class FuncionarioController {
     @Autowired
     private FuncionarioService service;
@@ -35,14 +35,14 @@ public class FuncionarioController {
 
     // DELETE - Deleta um Funcionario através do id
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Void> create(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     // PUT - Atualiza um Funcionario através do id
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Funcionario> getId(@PathVariable Long id, @RequestBody Funcionario obj) {
+    public ResponseEntity<Funcionario> update(@PathVariable Long id, @RequestBody Funcionario obj) {
         obj.setId(id);
         return ResponseEntity.ok().body(service.update(obj));
     }

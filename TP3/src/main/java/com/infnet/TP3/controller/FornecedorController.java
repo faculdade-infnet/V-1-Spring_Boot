@@ -15,16 +15,16 @@ public class FornecedorController {
     @Autowired
     private FornecedorService service;
 
-    // GET - Obtém um Fornecedor através do id
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<Fornecedor> getId(@PathVariable Long id) {
-        return ResponseEntity.ok().body(service.getId(id));
-    }
-
     // GET - Obtém todos os Fornecedors
     @GetMapping
     public ResponseEntity<List<Fornecedor>> getAll() {
         return ResponseEntity.ok().body(service.getAll());
+    }
+
+    // GET - Obtém um Fornecedor através do id
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Fornecedor> getId(@PathVariable Long id) {
+        return ResponseEntity.ok().body(service.getId(id));
     }
 
     // POST - Criação de Fornecedor
@@ -35,14 +35,14 @@ public class FornecedorController {
 
     // DELETE - Deleta um Fornecedor através do id
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Void> create(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     // PUT - Atualiza um Fornecedor através do id
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Fornecedor> getId(@PathVariable Long id, @RequestBody Fornecedor obj) {
+    public ResponseEntity<Fornecedor> update(@PathVariable Long id, @RequestBody Fornecedor obj) {
         obj.setId(id);
         return ResponseEntity.ok().body(service.update(obj));
     }

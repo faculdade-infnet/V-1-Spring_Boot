@@ -35,14 +35,14 @@ public class ProdutoController {
 
     // DELETE - Deleta um Produto através do id
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Void> create(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     // PUT - Atualiza um Produto através do id
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Produto> getId(@PathVariable Long id, @RequestBody Produto obj) {
+    public ResponseEntity<Produto> update(@PathVariable Long id, @RequestBody Produto obj) {
         obj.setId(id);
         return ResponseEntity.ok().body(service.update(obj));
     }

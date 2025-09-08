@@ -35,14 +35,14 @@ public class ClienteController {
 
     // DELETE - Deleta um Cliente através do id
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Void> create(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     // PUT - Atualiza um Cliente através do id
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Cliente> getId(@PathVariable Long id, @RequestBody Cliente obj) {
+    public ResponseEntity<Cliente> update(@PathVariable Long id, @RequestBody Cliente obj) {
         obj.setId(id);
         return ResponseEntity.ok().body(service.update(obj));
     }
