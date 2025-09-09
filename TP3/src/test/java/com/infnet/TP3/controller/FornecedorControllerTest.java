@@ -1,8 +1,8 @@
 package com.infnet.TP3.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.infnet.TP3.Entity.Cliente;
-import com.infnet.TP3.service.ClienteService;
+import com.infnet.TP3.Entity.Fornecedor;
+import com.infnet.TP3.service.FornecedorService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,41 +20,41 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(ClienteController.class)
-class ClienteControllerTest {
+@WebMvcTest(FornecedorController.class)
+class FornecedorControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
     @MockBean
-    private ClienteService service;
+    private FornecedorService service;
 
-    private Cliente cliente1;
+    private Fornecedor fornecedor1;
     private ObjectMapper objectMapper;
 
     @BeforeEach
     void setUp() {
-        cliente1 = new Cliente(1L, "João da Silva", "joao.silva@email.com", "(11) 99999-1111");
+        fornecedor1 = new Fornecedor(1L, "Alpha Suprimentos Ltda", "12.345.678/0001-90", "(11) 4002-8922");
         objectMapper = new ObjectMapper();
     }
 
     @Test
-    void testCreateCliente() throws Exception {
-        when(service.create(any(Cliente.class))).thenReturn(cliente1);
+    void testCreateFornecedor() throws Exception {
+        when(service.create(any(Fornecedor.class))).thenReturn(fornecedor1);
 
-        mockMvc.perform(post("/clientes")
+        mockMvc.perform(post("/fornecedores")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(cliente1)))
+                        .content(objectMapper.writeValueAsString(fornecedor1)))
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.nome").value("João da Silva"));
+                .andExpect(jsonPath("$.nome").value("Alpha Suprimentos Ltda"));
 
-        verify(service, times(1)).create(any(Cliente.class));
+        verify(service, times(1)).create(any(Fornecedor.class));
     }
 
     @Test
-    void testGetAllClientes() throws Exception {
-        when(service.getAll()).thenReturn(Arrays.asList(cliente1));
+    void testGetAllFornecedors() throws Exception {
+        when(service.getAll()).thenReturn(Arrays.asList(fornecedor1));
 
-        mockMvc.perform(get("/clientes"))
+        mockMvc.perform(get("/fornecedores"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()").value(1));
 
@@ -62,37 +62,37 @@ class ClienteControllerTest {
     }
 
     @Test
-    void testGetClienteById() throws Exception {
-        when(service.getId(1L)).thenReturn(cliente1);
+    void testGetFornecedorById() throws Exception {
+        when(service.getId(1L)).thenReturn(fornecedor1);
 
-        mockMvc.perform(get("/clientes/1"))
+        mockMvc.perform(get("/fornecedores/1"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.nome").value("João da Silva"));
+                .andExpect(jsonPath("$.nome").value("Alpha Suprimentos Ltda"));
 
         verify(service, times(1)).getId(1L);
     }
 
     @Test
-    void testDeleteCliente() throws Exception {
+    void testDeleteFornecedor() throws Exception {
         doNothing().when(service).delete(1L);
 
-        mockMvc.perform(delete("/clientes/1"))
+        mockMvc.perform(delete("/fornecedores/1"))
                 .andExpect(status().isNoContent());
 
         verify(service, times(1)).delete(1L);
     }
 
     @Test
-    void testUpdateCliente() throws Exception {
-        Cliente clienteAtualizado = new Cliente(1L, "Cliente Atualizado", "carlos.silva@email.com", "(11) 99999-000");
-        when(service.update(any(Cliente.class))).thenReturn(clienteAtualizado);
+    void testUpdateFornecedor() throws Exception {
+        Fornecedor fornecedorAtualizado = new Fornecedor(1L, "Fornecedor Atualizado",  "12.345.678/0001-90", "(11) 4002-8922");
+        when(service.update(any(Fornecedor.class))).thenReturn(fornecedorAtualizado);
 
-        mockMvc.perform(put("/clientes/1")
+        mockMvc.perform(put("/fornecedores/1")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(clienteAtualizado)))
+                        .content(objectMapper.writeValueAsString(fornecedorAtualizado)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.nome").value("Cliente Atualizado"));
+                .andExpect(jsonPath("$.nome").value("Fornecedor Atualizado"));
 
-        verify(service, times(1)).update(any(Cliente.class));
+        verify(service, times(1)).update(any(Fornecedor.class));
     }
 }
