@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "nome": "Lucas Silva",
+    "cpf": "123.456.789-01",
+    "email": "lucas.silva@email.com",
+    "telefone": "(11) 91234-5678",
+    "endereco": "Rua A, 123, São Paulo, SP"
+  },
+  {
+    "id": 2,
+    "nome": "Mariana Oliveira",
+    "cpf": "234.567.890-12",
+    "email": "mariana.oliveira@email.com",
+    "telefone": "(21) 92345-6789",
+    "endereco": "Rua B, 456, Rio de Janeiro, RJ"
+  },
+  {
+    "id": 3,
+    "nome": "Gabriel Santos",
+    "cpf": "345.678.901-23",
+    "email": "gabriel.santos@email.com",
+    "telefone": "(31) 93456-7890",
+    "endereco": "Av. C, 789, Belo Horizonte, MG"
+  },
+  {
+    "id": 4,
+    "nome": "Beatriz Costa",
+    "cpf": "456.789.012-34",
+    "email": "beatriz.costa@email.com",
+    "telefone": "(41) 94567-8901",
+    "endereco": "Rua D, 101, Curitiba, PR"
+  },
+  {
+    "id": 5,
+    "nome": "Rafael Lima",
+    "cpf": "567.890.123-45",
+    "email": "rafael.lima@email.com",
+    "telefone": "(51) 95678-9012",
+    "endereco": "Rua E, 202, Porto Alegre, RS"
+  },
+  {
+    "id": 6,
+    "nome": "Ana Pereira",
+    "cpf": "678.901.234-56",
+    "email": "ana.pereira@email.com",
+    "telefone": "(61) 96789-0123",
+    "endereco": "Av. F, 303, Brasília, DF"
+  },
+  {
+    "id": 7,
+    "nome": "Pedro Almeida",
+    "cpf": "789.012.345-67",
+    "email": "pedro.almeida@email.com",
+    "telefone": "(71) 97890-1234",
+    "endereco": "Rua G, 404, Salvador, BA"
+  },
+  {
+    "id": 8,
+    "nome": "Carolina Rodrigues",
+    "cpf": "890.123.456-78",
+    "email": "carolina.rodrigues@email.com",
+    "telefone": "(81) 98901-2345",
+    "endereco": "Rua H, 505, Recife, PE"
+  },
+  {
+    "id": 9,
+    "nome": "Felipe Martins",
+    "cpf": "901.234.567-89",
+    "email": "felipe.martins@email.com",
+    "telefone": "(91) 99012-3456",
+    "endereco": "Av. I, 606, Belém, PA"
+  },
+  {
+    "id": 10,
+    "nome": "Juliana Fernandes",
+    "cpf": "012.345.678-90",
+    "email": "juliana.fernandes@email.com",
+    "telefone": "(11) 90123-4567",
+    "endereco": "Rua J, 707, São Paulo, SP"
+  }
+]
