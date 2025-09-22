@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/professor")
@@ -56,20 +57,34 @@ public class ProfessorController {
         disciplinaService.alocarAluno(disciplinaId, alunoId);
     }
 
+    // Adiciona Nota a um aluno
+    // http://localhost:8080/professor/disciplinas/1/notas/1?nota=8.5
     @PostMapping("/disciplinas/{disciplinaId}/notas/{alunoId}")
-    public void atribuirNota(@PathVariable Long disciplinaId,
-                             @PathVariable Long alunoId,
-                             @RequestParam Double nota) {
-        disciplinaService.atribuirNota(disciplinaId, alunoId, nota);
+    public void atribuirNotaAluno(@PathVariable Long disciplinaId,
+                                  @PathVariable Long alunoId,
+                                  @RequestParam Double nota) {
+        disciplinaService.atribuirNotaAluno(disciplinaId, alunoId, nota);
     }
 
+    // Obtém todos os alunos aprovados
+    // http://localhost:8080/professor/disciplinas/1/aprovados
     @GetMapping("/disciplinas/{disciplinaId}/aprovados")
     public List<Aluno> alunosAprovados(@PathVariable Long disciplinaId) {
-        return disciplinaService.listarAprovados(disciplinaId);
+        return disciplinaService.listarAlunosAprovados(disciplinaId);
     }
 
+    // Obtém todos os alunos reprovados
+    // http://localhost:8080/professor/disciplinas/1/reprovados
     @GetMapping("/disciplinas/{disciplinaId}/reprovados")
     public List<Aluno> alunosReprovados(@PathVariable Long disciplinaId) {
-        return disciplinaService.listarReprovados(disciplinaId);
+        return disciplinaService.listarAlunosReprovados(disciplinaId);
+    }
+
+    // Obtem as notas de uma id de aluno
+    // http://localhost:8080/professor/alunos/1/notas
+    @GetMapping("/alunos/{alunoId}/notas")
+    public ResponseEntity<Map<String, Double>> getNotas(@PathVariable Long alunoId) {
+        Map<String, Double> notas = alunoService.getNotasPorAluno(alunoId);
+        return ResponseEntity.ok(notas);
     }
 }

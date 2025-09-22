@@ -41,7 +41,7 @@ public class DisciplinaService {
         disciplinaRepository.save(disciplina);
     }
 
-    public void atribuirNota(Long disciplinaId, Long alunoId, Double nota) {
+    public void atribuirNotaAluno(Long disciplinaId, Long alunoId, Double nota) {
         Disciplina disciplina = disciplinaRepository.findById(disciplinaId).orElseThrow();
         Aluno aluno = disciplina.getAlunos().stream()
                 .filter(a -> a.getId().equals(alunoId))
@@ -51,7 +51,7 @@ public class DisciplinaService {
         disciplinaRepository.save(disciplina);
     }
 
-    public List<Aluno> listarAprovados(Long disciplinaId) {
+    public List<Aluno> listarAlunosAprovados(Long disciplinaId) {
         Disciplina disciplina = disciplinaRepository.findById(disciplinaId).orElseThrow();
         return disciplina.getNotas().entrySet().stream()
                 .filter(e -> e.getValue() >= 7)
@@ -59,7 +59,7 @@ public class DisciplinaService {
                 .toList();
     }
 
-    public List<Aluno> listarReprovados(Long disciplinaId) {
+    public List<Aluno> listarAlunosReprovados(Long disciplinaId) {
         Disciplina disciplina = disciplinaRepository.findById(disciplinaId).orElseThrow();
         return disciplina.getNotas().entrySet().stream()
                 .filter(e -> e.getValue() < 7)
