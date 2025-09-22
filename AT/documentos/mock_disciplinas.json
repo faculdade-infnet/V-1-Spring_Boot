@@ -4,9 +4,10 @@
     "nome": "Matemática",
     "codigo": "01"
   },
+
   {
     "id": 2,
-    "nome": "Física",
+    "nome": "Portugues",
     "codigo": "02"
   },
   {
@@ -46,7 +47,7 @@
   },
   {
     "id": 10,
-    "nome": "Informática",
+    "nome": "Física",
     "codigo": "10"
   }
 ]

@@ -1,15 +1,11 @@
 package com.infnet.AT.controller;
 
-import com.infnet.AT.entity.Aluno;
-import com.infnet.AT.entity.Disciplina;
-import com.infnet.AT.service.AlunoService;
-import com.infnet.AT.service.DisciplinaService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import com.infnet.AT.entity.*;
+import com.infnet.AT.service.*;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
-import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import java.util.*;
 
 @RestController
 @RequestMapping("/professor")
@@ -20,40 +16,52 @@ public class ProfessorController {
     @Autowired
     private DisciplinaService disciplinaService;
 
-    // GET - Obtém todos os Alunos
-    @GetMapping("/alunos")
-    public ResponseEntity<List<Aluno>> getAllAlunos() {
-        return ResponseEntity.ok().body(alunoService.getAll());
-    }
-
     // POST - Criação de Aluno
+    // http://localhost:8080/professor/alunos
     @PostMapping("/alunos")
     public ResponseEntity<Aluno> createAluno(@RequestBody Aluno obj) {
         return ResponseEntity.status(HttpStatus.CREATED).body(alunoService.create(obj));
     }
 
+    // GET - Obtém todos os Alunos
+    // http://localhost:8080/professor/alunos
+    @GetMapping("/alunos")
+    public ResponseEntity<List<Aluno>> getAllAlunos() {
+        return ResponseEntity.ok().body(alunoService.getAll());
+    }
+
     // DELETE - Deleta um Aluno através do id
     @DeleteMapping(value = "/alunos/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteAluno(@PathVariable Long id) {
         alunoService.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    // GET - Obtém todos os Alunos
+    // POST - Criação de Disciplina
+    // http://localhost:8080/professor/disciplinas
+    @PostMapping("/disciplinas")
+    public  ResponseEntity<Disciplina> createDisciplina(@RequestBody Disciplina obj) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(disciplinaService.create(obj));
+    }
+
+    // GET - Obtém todos os Disciplinas
+    // http://localhost:8080/professor/disciplinas
     @GetMapping("/disciplinas")
     public ResponseEntity<List<Disciplina>> getAllDisciplinas() {
         return ResponseEntity.ok().body(disciplinaService.getAll());
     }
 
-    // POST - Criação de Disciplina
-    @PostMapping("/disciplinas")
-    public  ResponseEntity<Disciplina> cadastrarDisciplina(@RequestBody Disciplina obj) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(disciplinaService.create(obj));
+    // DELETE - Deleta um Aluno através do id
+    @DeleteMapping(value = "/disciplinas/{id}")
+    public ResponseEntity<Void> deleteDisciplina(@PathVariable Long id) {
+        disciplinaService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
-    // buscar aluno e alocar
+    // Buscar aluno e alocar em disciplinha
+    // http://localhost:8080/professor/disciplinas/3/alunos/2
     @PostMapping("/disciplinas/{disciplinaId}/alunos/{alunoId}")
-    public void alocarAluno(@PathVariable Long disciplinaId, @PathVariable Long alunoId) {
+    public void alocarAlunoEmDisciplina(@PathVariable Long disciplinaId, @PathVariable Long alunoId) {
         disciplinaService.alocarAluno(disciplinaId, alunoId);
     }
 

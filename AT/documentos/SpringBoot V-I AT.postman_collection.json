@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "6e4a8adf-9e5e-4649-bf51-8c4f65a088e0",
+		"name": "SpringBoot V-I AT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44799482",
+		"_collection_link": "https://samuel-7792210.postman.co/workspace/samuel's-Workspace~a0a601d6-0edf-41c2-8f38-a282d263ca19/collection/44799482-6e4a8adf-9e5e-4649-bf51-8c4f65a088e0?action=share&source=collection_link&creator=44799482"
+	},
+	"item": [
+		{
+			"name": "Obter Token Auth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "username",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}} /authenticate",
+					"host": [
+						"{{localhost}} "
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Aluno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Lucas Silva\",\r\n    \"cpf\": \"123.456.789-01\",\r\n    \"email\": \"lucas.silva@email.com\",\r\n    \"telefone\": \"(11) 91234-5678\",\r\n    \"endereco\": \"Rua A, 123, São Paulo, SP\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/professor/alunos",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"professor",
+						"alunos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Aluno",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Mariana Oliveira\",\r\n    \"cpf\": \"234.567.890-12\",\r\n    \"email\": \"mariana.oliveira@email.com\",\r\n    \"telefone\": \"(21) 92345-6789\",\r\n    \"endereco\": \"Rua B, 456, Rio de Janeiro, RJ\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/professor/alunos",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"professor",
+						"alunos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Disciplina",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {    \r\n    \"nome\": \"Química\",\r\n    \"codigo\": \"03\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/professor/disciplinas",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"professor",
+						"disciplinas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Alunos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/professor/alunos",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"professor",
+						"alunos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Disciplinas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/professor/disciplinas",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"professor",
+						"disciplinas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Notas de Aluno",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/professor/alunos/1/notas",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"professor",
+						"alunos",
+						"1",
+						"notas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alocar disciplina",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/professor/disciplinas/2/alunos/1",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"professor",
+						"disciplinas",
+						"2",
+						"alunos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atribuir Nota",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/professor/disciplinas/1/notas/1?nota=8.5",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"professor",
+						"disciplinas",
+						"1",
+						"notas",
+						"1"
+					],
+					"query": [
+						{
+							"key": "nota",
+							"value": "8.5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alunos Aprovados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/professor/disciplinas/1/aprovados",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"professor",
+						"disciplinas",
+						"1",
+						"aprovados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alunos Reprovados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/professor/disciplinas/2/reprovados",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"professor",
+						"disciplinas",
+						"2",
+						"reprovados"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

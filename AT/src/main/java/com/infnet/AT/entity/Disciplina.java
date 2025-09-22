@@ -3,7 +3,6 @@ package com.infnet.AT.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.io.Serializable;
 import java.util.*;
 
@@ -46,16 +45,16 @@ public class Disciplina implements Serializable {
         aluno.getDisciplinas().add(this);
     }
 
-    public void atribuirNota(Aluno aluno, Double nota) {
-        if (!alunos.contains(aluno)) {
-            throw new IllegalArgumentException("Aluno não está matriculado nesta disciplina");
-        }
-        this.notas.put(aluno, nota);
-    }
-
-    public boolean estaAprovado(Aluno aluno) {
-        Double nota = notas.get(aluno);
-        return nota != null && nota >= 7;
-    }
+//    public void atribuirNota(Aluno aluno, Double nota) {
+//        if (!alunos.contains(aluno)) {
+//            throw new IllegalArgumentException("Aluno não está matriculado nesta disciplina");
+//        }
+//        this.notas.put(aluno, nota);
+//    }
+//
+//    public boolean estaAprovado(Aluno aluno) {
+//        Double nota = notas.get(aluno);
+//        return nota != null && nota >= 7;
+//    }
 }
 

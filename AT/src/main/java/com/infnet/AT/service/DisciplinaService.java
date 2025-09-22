@@ -1,14 +1,10 @@
 package com.infnet.AT.service;
 
-import com.infnet.AT.entity.Aluno;
-import com.infnet.AT.entity.Disciplina;
-import com.infnet.AT.repository.AlunoRepository;
-import com.infnet.AT.repository.DisciplinaRepository;
+import com.infnet.AT.entity.*;
+import com.infnet.AT.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class DisciplinaService {
@@ -28,6 +24,11 @@ public class DisciplinaService {
 
     public Disciplina create(Disciplina obj) {
         return disciplinaRepository.save(obj);
+    }
+
+    // Rota DELETE
+    public void delete(Long id) {
+        disciplinaRepository.deleteById(id);
     }
 
     public void alocarAluno(Long disciplinaId, Long alunoId) {
