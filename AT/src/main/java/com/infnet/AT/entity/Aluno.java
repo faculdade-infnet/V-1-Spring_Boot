@@ -27,14 +27,4 @@ public class Aluno implements Serializable {
     @ManyToMany(mappedBy = "alunos")
     @Builder.Default
     private Set<Disciplina> disciplinas = new HashSet<>();
-
-    public void adicionarDisciplina(Disciplina disciplina) {
-        this.disciplinas.add(disciplina);
-        disciplina.getAlunos().add(this);
-    }
-
-    public void removerDisciplina(Disciplina disciplina) {
-        this.disciplinas.remove(disciplina);
-        disciplina.getAlunos().remove(this);
-    }
 }

@@ -44,17 +44,5 @@ public class Disciplina implements Serializable {
         this.alunos.add(aluno);
         aluno.getDisciplinas().add(this);
     }
-
-//    public void atribuirNota(Aluno aluno, Double nota) {
-//        if (!alunos.contains(aluno)) {
-//            throw new IllegalArgumentException("Aluno não está matriculado nesta disciplina");
-//        }
-//        this.notas.put(aluno, nota);
-//    }
-//
-//    public boolean estaAprovado(Aluno aluno) {
-//        Double nota = notas.get(aluno);
-//        return nota != null && nota >= 7;
-//    }
 }
 
