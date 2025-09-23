@@ -10,26 +10,20 @@ import java.util.*;
 public class AlunoService {
     @Autowired
     private AlunoRepository alunoRepository;
-    @Autowired
-    private DisciplinaRepository disciplinaRepository;
+
+    // Rota POST - Cria aluno sem disciplinhas
+    public Aluno create(Aluno obj) {
+        return alunoRepository.save(obj);
+    }
 
     // Rota GET All
     public List<Aluno> getAll() {
         return alunoRepository.findAll();
     }
 
-    public Optional<Aluno> findById(Long id) {
-        return alunoRepository.findById(id);
-    }
-
     // Rota DELETE
     public void delete(Long id) {
         alunoRepository.deleteById(id);
-    }
-
-    // Rota POST - Cria aluno sem disciplinhas
-    public Aluno create(Aluno obj) {
-        return alunoRepository.save(obj);
     }
 
     public Map<String, Double> getNotasPorAluno(Long alunoId) {

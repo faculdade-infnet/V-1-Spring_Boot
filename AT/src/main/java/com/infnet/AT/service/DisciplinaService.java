@@ -2,6 +2,8 @@ package com.infnet.AT.service;
 
 import com.infnet.AT.entity.*;
 import com.infnet.AT.repository.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
@@ -14,16 +16,12 @@ public class DisciplinaService {
     @Autowired
     private AlunoRepository alunoRepository;
 
-    public List<Disciplina> getAll() {
-        return disciplinaRepository.findAll();
-    }
-
-    public Optional<Disciplina> findById(Long id) {
-        return disciplinaRepository.findById(id);
-    }
-
     public Disciplina create(Disciplina obj) {
         return disciplinaRepository.save(obj);
+    }
+
+    public List<Disciplina> getAll() {
+        return disciplinaRepository.findAll();
     }
 
     // Rota DELETE
