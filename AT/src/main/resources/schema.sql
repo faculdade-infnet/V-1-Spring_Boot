@@ -10,7 +10,16 @@
 -- \q
 
 
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
 
+-- senha: 123456
+INSERT INTO users (username, password)
+VALUES ('admin', '$2a$12$aG40M8XeSjBweYWUq8sNXuzBO1v4axSdkNERCWVDQ6PzTkfIF9w1m');
+-- SELECT id, username, password FROM users;
 
 CREATE TABLE IF NOT EXISTS tb_aluno (
     id SERIAL PRIMARY KEY,

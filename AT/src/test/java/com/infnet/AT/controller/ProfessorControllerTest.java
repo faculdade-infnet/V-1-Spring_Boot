@@ -5,6 +5,7 @@ import com.infnet.AT.entity.*;
 import com.infnet.AT.service.*;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -17,6 +18,7 @@ import static org.mockito.Mockito.*;
 import java.util.*;
 
 @WebMvcTest(ProfessorController.class)
+@AutoConfigureMockMvc(addFilters = false)
 class ProfessorControllerTest {
     @Autowired
     private MockMvc mockMvc;
